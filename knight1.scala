@@ -31,13 +31,13 @@ def legal_moves(dim: Int, path: Path, x: Pos) : List[Pos] = {
 }
 
 //some testcases
-//
-//assert(legal_moves(8, Nil, (2,2)) == 
+
+// assert(legal_moves(8, Nil, (2,2)) == 
 //  List((3,4), (4,3), (4,1), (3,0), (1,0), (0,1), (0,3), (1,4)))
-//assert(legal_moves(8, Nil, (7,7)) == List((6,5), (5,6)))
-//assert(legal_moves(8, List((4,1), (1,0)), (2,2)) == 
+// assert(legal_moves(8, Nil, (7,7)) == List((6,5), (5,6)))
+// assert(legal_moves(8, List((4,1), (1,0)), (2,2)) == 
 //  List((3,4), (4,3), (3,0), (0,1), (0,3), (1,4)))
-//assert(legal_moves(8, List((6,6)), (7,7)) == List((6,5), (5,6)))
+// assert(legal_moves(8, List((6,6)), (7,7)) == List((6,5), (5,6)))
 
 
 // (3) 
@@ -123,6 +123,36 @@ def print_board(dim: Int, path: Path): Unit = {
 
 
 */
+
+// Main method for testing
+def main(args: Array[String]) : Unit = {
+  println(legal_moves(8, Nil, (2,2)) == 
+  List((3,4), (4,3), (4,1), (3,0), (1,0), (0,1), (0,3), (1,4)))
+  println(legal_moves(8, Nil, (7,7)) == List((6,5), (5,6)))
+  println(legal_moves(8, List((4,1), (1,0)), (2,2)) == 
+  List((3,4), (4,3), (3,0), (0,1), (0,3), (1,4)))
+  println(legal_moves(8, List((6,6)), (7,7)) == List((6,5), (5,6)))
+
+  println()
+  println(is_legal(8, Nil, (3, 4)) == true)
+  println(is_legal(8, List((4, 1), (1, 0)), (4, 1)) == false)
+  println(is_legal(2, Nil, (0, 0)) == true)
+
+  println()
+  println(legal_moves(8, Nil, (2,2)) == List((3,4), (4,3), (4,1), (3,0), (1,0), (0,1), (0,3), (1,4)))
+  println(legal_moves(8, Nil, (7,7)) == List((6,5), (5,6)))
+  println(legal_moves(8, List((4,1), (1,0)), (2,2)) == List((3,4), (4,3), (3,0), (0,1), (0,3), (1,4)))
+  println(legal_moves(8, List((6,6)), (7,7)) == List((6,5), (5,6)))
+  println(legal_moves(1, Nil, (0,0)) == Nil)
+  println(legal_moves(2, Nil, (0,0)) == Nil)
+  println(legal_moves(3, Nil, (0,0)) == List((1,2), (2,1)))
+
+  println()
+  println(enum_tours(5, List((0, 0))).length == 304)
+  println(enum_tours(5, List((0,1)) ).length == 0)
+  println(enum_tours(5, List((0,2)) ).length == 56)
+
+}
 
 }
 

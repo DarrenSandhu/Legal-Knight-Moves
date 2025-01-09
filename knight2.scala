@@ -80,25 +80,18 @@ def first_tour_heuristics(dim: Int, path: Path) : Option[Path] = {
     }
 }
 
+// Main function to be used for testing
+def main(args: Array[String]): Unit = {
+    println(ordered_moves(8, List((3,4), (3,2)), (1,3)) == List((0,1), (0,5), (2,1), (2,5)))
+    println(ordered_moves(8, List((4,0)), (0,0)) == List((2,1), (1,2)))
+    println(ordered_moves(8, List((0,4)), (0,0)) == List((1,2), (2,1)))
 
+    println()
+    println(first_closed_tour_heuristics(6, List((3,3))))
+}
 
 }
 
-// Test First Closed Tour Heuristics
-//==================================
-//
-// You can test your code using the main function below.
-// The main function will be used to test first_closed_tour_heuristics
-// function. You can test the function by running the following command:
-// scala M4b
-// object Main {
-//   def main(args: Array[String]) : Unit = {
-//     val path = List((3, 3))
-//     val dim = 6
-//     val result = M4b.first_closed_tour_heuristics(dim, path)
-//     println(result)
-//   }
-// }
 
 
 
