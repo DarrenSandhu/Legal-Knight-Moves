@@ -88,6 +88,7 @@ def main(args: Array[String]): Unit = {
 
     println()
     println(first_closed_tour_heuristics(6, List((3,3))))
+    println("To do: Fix first_closed_tour_heuristics")
 }
 
 }
